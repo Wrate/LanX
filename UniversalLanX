@@ -1,134 +1,152 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "LanX",
-   Icon = 103564018377780, -- Use valid image asset ID
-   LoadingTitle = "Loading...",
-   LoadingSubtitle = "by LanX",
-   Theme = "Default",
-   ToggleUIKeybind = "L",
+    Name = "LanX",
+    Icon = 10356401837, -- Make sure this asset ID is a valid Roblox decal
+    LoadingTitle = "Loading...",
+    LoadingSubtitle = "by LanX",
+    Theme = "Default",
+    ToggleUIKeybind = Enum.KeyCode.L, -- Use Enum for clarity
 
-   DisableRayfieldPrompts = false,
-   DisableBuildWarnings = false,
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false,
 
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = nil,
-      FileName = "Big Hub"
-   },
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "Big Hub"
+    },
 
-   Discord = {
-      Enabled = false,
-      Invite = "",
-      RememberJoins = true
-   },
+    Discord = {
+        Enabled = false,
+        Invite = "",
+        RememberJoins = true
+    },
 
-   KeySystem = true,
-   KeySettings = {
-      Title = "LanX Key System",
-      Subtitle = "Key System",
-      Note = "LanX33",
-      FileName = "Key",
-      SaveKey = true,
-      GrabKeyFromSite = true,
-      Key = {"LanX33"}
-   }
+    KeySystem = true,
+    KeySettings = {
+        Title = "LanX Key System",
+        Subtitle = "Key System",
+        Note = "LanX33",
+        FileName = "Key",
+        SaveKey = true,
+        GrabKeyFromSite = false, -- Set to true only if you have a backend
+        Key = {"LanX33"}
+    }
 })
 
 Rayfield:Notify({
-   Title = "LanX Say",
-   Content = "Successfully Loaded.",
-   Duration = 6.5,
-   Image = 4483362458,
+    Title = "LanX Say",
+    Content = "Successfully Loaded.",
+    Duration = 6.5,
+    Image = 4483362458
 })
 
 -- Tabs
-local NaturalDisasterSurvivalTab = Window:CreateTab("Natural Disaster Survival", 88208086340781)
+local NaturalDisasterSurvivalTab = Window:CreateTab("Natural Disaster Survival", 8820808634)
 local PlayerTab = Window:CreateTab("Local Player", 4483362458)
 local UniversalTab = Window:CreateTab("Universal", 4483362458)
-local DeadRailsTab = Window:CreateTab("Dead Rails", 122874126897828)
+local DeadRailsTab = Window:CreateTab("Dead Rails", 12287412689)
 local BetaTab = Window:CreateTab("Beta", 17838741859)
 local BasketBallZeroTab = Window:CreateTab("Basket ball zero", 4483362458)
+
 -- Universal Buttons
 UniversalTab:CreateButton({
-   Name = "Infinite Yield",
-   Callback = function()
-      loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
-   end,
+    Name = "Infinite Yield",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
+        end)
+    end,
 })
 
 UniversalTab:CreateButton({
-   Name = "Server Menu",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/lumpiasallad/Roblox_ServerHop/refs/heads/main/ServerHopScript.lua"))()
-   end,
+    Name = "Server Menu",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/lumpiasallad/Roblox_ServerHop/refs/heads/main/ServerHopScript.lua"))()
+        end)
+    end,
 })
 
 UniversalTab:CreateButton({
-   Name = "Fly Gui",
-   Callback = function()
-      loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-script-v3-16742"))()
-   end,
+    Name = "Fly Gui",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-script-v3-16742"))()
+        end)
+    end,
 })
 
 -- Player Sliders
 PlayerTab:CreateSlider({
-   Name = "Walk Speed",
-   Range = {0, 1000},
-   Increment = 10,
-   Suffix = "Speed",
-   CurrentValue = 16,
-   Flag = "WalkSpeedSlider",
-   Callback = function(Value)
-      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-   end,
+    Name = "Walk Speed",
+    Range = {0, 1000},
+    Increment = 10,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Flag = "WalkSpeedSlider",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end,
 })
 
 PlayerTab:CreateSlider({
-   Name = "Jump Power",
-   Range = {0, 1000},
-   Increment = 10,
-   Suffix = "Jump",
-   CurrentValue = 50,
-   Flag = "JumpPowerSlider",
-   Callback = function(Value)
-      game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-   end,
+    Name = "Jump Power",
+    Range = {0, 1000},
+    Increment = 10,
+    Suffix = "Jump",
+    CurrentValue = 50,
+    Flag = "JumpPowerSlider",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end,
 })
 
 -- Dead Rails
 DeadRailsTab:CreateButton({
-   Name = "KiciaHook",
-   Callback = function()
-      loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-OP-KiciaHook-V2-Dead-Rails-Auto-Farm-And-More-38614"))()
-   end,
+    Name = "KiciaHook",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-OP-KiciaHook-V2-Dead-Rails-Auto-Farm-And-More-38614"))()
+        end)
+    end,
+})
+
+DeadRailsTab:CreateButton({
+    Name = "Capri Hub",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/aceurss/AcxScripter/refs/heads/main/CapriHub-DeadRails'))()
+        end)
+    end,
 })
 
 -- Natural Disaster Survival
 NaturalDisasterSurvivalTab:CreateButton({
-   Name = "DD hub",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/ddario66/Test/refs/heads/main/Nature%20disaster"))()
-   end,
+    Name = "DD hub",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ddario66/Test/refs/heads/main/Nature%20disaster"))()
+        end)
+    end,
 })
 
 NaturalDisasterSurvivalTab:CreateButton({
-   Name = "c00lgui",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/MiRw3b/c00lgui-v3rx/main/c00lguiv3rx.lua"))()
-   end,
+    Name = "c00lgui",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/MiRw3b/c00lgui-v3rx/main/c00lguiv3rx.lua"))()
+        end)
+    end,
 })
 
-DeadRailsTab:CreateButton({
-   Name = "Capri Hub",
-   Callback = function()
-      loadstring(game:HttpGet('https://raw.githubusercontent.com/aceurss/AcxScripter/refs/heads/main/CapriHub-DeadRails'))()
-   end,
-})
-
+-- Basketball Zero
 BasketBallZeroTab:CreateButton({
-   Name = "BasketBallZero",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/roscripts749/loader/refs/heads/main/loader"))()
-   end,
+    Name = "BasketBallZero",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/roscripts749/loader/refs/heads/main/loader"))()
+        end)
+    end,
 })
