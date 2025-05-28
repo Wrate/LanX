@@ -48,7 +48,7 @@ local PlayerTab = Window:CreateTab("Local Player", 4483362458)
 local UniversalTab = Window:CreateTab("Universal", 4483362458)
 local DeadRailsTab = Window:CreateTab("Dead Rails", 122874126897828)
 local BetaTab = Window:CreateTab("Beta", 17838741859)
-
+local BasketBallZeroTab = Window:CreateTab("Basket ball zero", 4483362458)
 -- Universal Buttons
 UniversalTab:CreateButton({
    Name = "Infinite Yield",
@@ -123,5 +123,12 @@ DeadRailsTab:CreateButton({
    Name = "Capri Hub",
    Callback = function()
       loadstring(game:HttpGet('https://raw.githubusercontent.com/aceurss/AcxScripter/refs/heads/main/CapriHub-DeadRails'))()
+   end,
+})
+
+BasketBallZeroTab:CreateButton({
+   Name = "BasketBallZero",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/roscripts749/loader/refs/heads/main/loader"))()
    end,
 })
