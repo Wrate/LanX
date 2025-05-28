@@ -119,8 +119,8 @@ NaturalDisasterSurvivalTab:CreateButton({
    end,
 })
 
-NaturalDisasterSurvivalTab:CreateButton({
-   Name = "Capri Hub", -- <-- Perbaikan: koma ditambahkan di sini
+DeadRailsTab:CreateButton({
+   Name = "Capri Hub",
    Callback = function()
       loadstring(game:HttpGet('https://raw.githubusercontent.com/aceurss/AcxScripter/refs/heads/main/CapriHub-DeadRails'))()
    end,
